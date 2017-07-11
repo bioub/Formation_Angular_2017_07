@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HorlogeComponent } from './horloge/horloge.component';
 import { FormComponent } from './form/form.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HorlogeComponent,
-    FormComponent
+    FormComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

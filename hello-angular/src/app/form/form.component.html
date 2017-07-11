@@ -1,0 +1,8 @@
+<p>
+  <!-- Prénom : <input (input)="onChange($event)"> -->
+  Prénom : <input [(ngModel)]="prenom">
+</p>
+<p>
+  Bonjour {{prenom}} !
+  <button (click)="notifier()">Notifier App</button>
+</p>

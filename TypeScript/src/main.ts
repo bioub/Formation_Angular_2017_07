@@ -5,8 +5,8 @@ const div = document.getElementById('horloge');
 if (div) {
   const horloge = new Horloge({
     container: div,
-    delay: 1000 * 60,
-    format: 'HH:mm',
+    delay: 1000,
+    format: 'HH:mm:ss'
   });
   horloge.start();
 }

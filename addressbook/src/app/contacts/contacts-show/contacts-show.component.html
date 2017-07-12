@@ -1,3 +1,11 @@
 <p>
-  contacts-show works!
+  <b>Prénom :</b>
+  {{contact.prenom}}
 </p>
+
+<p>
+  <b>Nom :</b>
+  {{contact.nom}}
+</p>
+
+<button class="btn btn-danger" [disabled]="contact.id === undefined" (click)="deleteContact()">Supprimer</button>

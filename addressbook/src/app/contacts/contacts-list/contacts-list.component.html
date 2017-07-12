@@ -1,10 +1,17 @@
 <div class="row">
   <div class="col-md-3">
-    <ul class="list-group">
-      <li *ngFor="let contact of contacts" class="list-group-item">
-        {{contact.prenom}} {{contact.nom}}
-      </li>
-    </ul>
+    <div class="list-group">
+      <div class="list-group-item">
+        <input class="form-control" placeholder="Filtrer" (input)="filtrer($event)">
+      </div>
+      <a class="list-group-item list-group-item-action"
+         *ngFor="let c of contacts"
+        routerLinkActive="active"
+        [routerLink]="[c.id]"
+        [innerHTML]="c.prenom + ' ' + c.nom|highlight:filter"
+      >
+      </a>
+    </div>
 
     <a class="btn btn-block btn-primary contact-add" [routerLink]="['ajouter']">Ajouter</a>
   </div>

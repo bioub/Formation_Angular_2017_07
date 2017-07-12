@@ -1,3 +1,4 @@
+import { ContactsShowComponent } from './contacts-show/contacts-show.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContactsAddComponent } from './contacts-add/contacts-add.component';
@@ -9,6 +10,9 @@ const routes: Routes = [{
   children: [{
     path: 'ajouter',
     component: ContactsAddComponent,
+  }, {
+    path: ':id',
+    component: ContactsShowComponent,
   }]
 }];
 

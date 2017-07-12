@@ -1,4 +1,4 @@
-<form #contactForm="ngForm">
+<form #contactForm="ngForm" (submit)="contactForm.valid && addContact()">
   <div class="form-group" [ngClass]="{'has-danger': prenom.errors && (prenom.dirty || prenom.touched)}">
     <label class="form-control-label">Prénom</label>
     <input class="form-control" name="prenom" required

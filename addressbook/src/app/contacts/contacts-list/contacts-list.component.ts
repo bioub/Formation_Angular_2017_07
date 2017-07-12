@@ -1,6 +1,6 @@
+import { Contact } from './../../shared/model/contact';
 import { Component, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import 'rxjs/add/operator/map'
+import { ContactService } from './../../core/contact.service';
 
 @Component({
   selector: 'ab-contacts-list',
@@ -9,17 +9,16 @@ import 'rxjs/add/operator/map'
 })
 export class ContactsListComponent implements OnInit {
 
-  contacts: {prenom: string, nom: string}[] = [];
+  contacts: Contact[] = [];
 
   constructor(
-    protected http: Http,
+    protected contactService: ContactService,
   ) { }
 
   ngOnInit() {
-    this.http.get('/assets/db.json')
-      .map((res: Response) => res.json())
-      .map(obj => obj.contacts)
-      .subscribe(contacts => this.contacts = contacts)
+    this.contactService
+      .getList()
+      .subscribe(contacts => this.contacts = contacts);
   }
 
 }

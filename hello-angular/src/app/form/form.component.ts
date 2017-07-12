@@ -13,8 +13,7 @@ import {
 export class FormComponent implements OnInit {
 
   prenom: string;
-  @Output()
-  onClickNotifier = new EventEmitter<string>();
+  @Output() onClickNotifier = new EventEmitter<string>();
 
   constructor() { }
 

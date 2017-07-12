@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ContactsRoutingModule } from './contacts-routing.module';
 import { ContactsListComponent } from './contacts-list/contacts-list.component';
@@ -9,10 +9,15 @@ import { ContactsShowComponent } from './contacts-show/contacts-show.component';
 
 @NgModule({
   imports: [
-    HttpModule,
     CommonModule,
-    ContactsRoutingModule
+    ContactsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  declarations: [ContactsListComponent, ContactsAddComponent, ContactsShowComponent]
+  declarations: [
+    ContactsListComponent,
+    ContactsAddComponent,
+    ContactsShowComponent,
+  ]
 })
 export class ContactsModule { }

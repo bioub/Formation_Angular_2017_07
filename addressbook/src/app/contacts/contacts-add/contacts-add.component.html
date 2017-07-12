@@ -1,3 +1,23 @@
-<p>
-  contacts-add works!
-</p>
+<form #contactForm="ngForm">
+  <div class="form-group" [ngClass]="{'has-danger': prenom.errors && (prenom.dirty || prenom.touched)}">
+    <label class="form-control-label">Prénom</label>
+    <input class="form-control" name="prenom" required
+           [ngClass]="{'form-control-danger': prenom.errors && (prenom.dirty || prenom.touched)}"
+           [(ngModel)]="contact.prenom"
+           #prenom="ngModel">
+    <div class="form-control-feedback" *ngIf="prenom.errors && (prenom.dirty || prenom.touched)">
+      Le prénom est obligatoire.
+    </div>
+  </div>
+  <div class="form-group" [ngClass]="{'has-danger': nom.errors && (nom.dirty || nom.touched)}">
+    <label class="form-control-label">Nom</label>
+    <input class="form-control" name="nom" required
+           [ngClass]="{'form-control-danger': nom.errors && (nom.dirty || nom.touched)}"
+           [(ngModel)]="contact.nom"
+           #nom="ngModel">
+    <div class="form-control-feedback" *ngIf="nom.errors && (nom.dirty || nom.touched)">
+      Le nom est obligatoire.
+    </div>
+  </div>
+  <button class="btn btn-primary">Ajouter</button>
+</form>

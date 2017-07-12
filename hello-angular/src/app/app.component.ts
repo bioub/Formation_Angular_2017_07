@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
       Welcome to {{title}}!!
     </h1>
     <hr />
-    <hello-horloge [delay]="1000"></hello-horloge>
+    <hello-horloge [delay]="1000" format="HH:mm"></hello-horloge>
     <hr />
     <hello-form (onClickNotifier)="handleClickNotifier($event)"></hello-form>
-    <div *ngFor="let prenom of prenoms; index as i; last as isLast">
+    <div *ngFor="let prenom of prenoms; let index as i; let last as isLast">
       {{prenom}} - {{i}}
       <button *ngIf="isLast">+</button>
     </div>

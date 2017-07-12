@@ -8,10 +8,8 @@ import { Title } from '@angular/platform-browser';
 })
 export class HorlogeComponent implements OnInit {
 
-  @Input()
-  delay = 1000;
-  @Input()
-  format = 'HH:mm:ss';
+  @Input() delay = 1000;
+  @Input() format = 'HH:mm:ss';
   now: Date;
 
   constructor(protected titleService: Title) { }

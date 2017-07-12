@@ -1,0 +1,16 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" (click)="toggleCollapse()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" [routerLink]="['/']">AddressBook</a>
+
+    <div class="navbar-collapse" [ngbCollapse]="isCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['contacts']">Contacts</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

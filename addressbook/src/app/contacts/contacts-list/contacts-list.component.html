@@ -1,5 +1,16 @@
-<ul>
-  <li *ngFor="let contact of contacts">
-    {{contact.prenom}} {{contact.nom}}
-  </li>
-</ul>
+<div class="row">
+  <div class="col-md-3">
+    <ul class="list-group">
+      <li *ngFor="let contact of contacts" class="list-group-item">
+        {{contact.prenom}} {{contact.nom}}
+      </li>
+    </ul>
+
+    <a class="btn btn-block btn-primary contact-add" [routerLink]="['ajouter']">Ajouter</a>
+  </div>
+  <div class="col-md-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
